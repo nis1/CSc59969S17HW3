@@ -48,6 +48,9 @@ d3.json(URL_temperatureData, function(error, data) {
   var lowVariance = d3.min(varianceData);
   var highVariance = d3.max(varianceData);
 
+  console.log(highVariance);
+  console.log(lowVariance);
+
   var lowYear = d3.min(yearData);
   var highYear = d3.max(yearData);
 
@@ -59,8 +62,11 @@ d3.json(URL_temperatureData, function(error, data) {
 
 
   var colorScale = d3.scale.quantile()
+
     .domain([lowVariance + baseTemp, highVariance + baseTemp])
-    .range(colors);
+    .range(colors)
+  console.log(lowVariance + baseTemp)
+  console.log(highVariance + baseTemp);
 
 
   var svg = d3.select("#chart").append("svg")
@@ -163,12 +169,13 @@ d3.json(URL_temperatureData, function(error, data) {
 
   temps.transition().duration(1000)
     .style("fill", function(d) {
+
       return colorScale(d.variance + baseTemp);
     });
 
 
   var legend = svg.selectAll(".legend")
-    .data([0].concat(colorScale.quantiles()), function(d) {
+    .data([baseTemp+lowVariance].concat(colorScale.quantiles()), function(d) {
       return d;
     });
 
@@ -183,12 +190,14 @@ d3.json(URL_temperatureData, function(error, data) {
     .attr("width", legendElementWidth)
     .attr("height", gridHeight / 2)
     .style("fill", function(d, i) {
+
       return colors[i];
     });
 
   legend.append("text")
     .attr("class", "scales")
     .text(function(d) {
+
       return (Math.floor(d * 10) / 10);
     })
     .attr("x", function(d, i) {

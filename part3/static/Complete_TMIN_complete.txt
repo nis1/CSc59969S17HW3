@@ -1,38 +1,38 @@
-% This file contains a detailed summary of the land-surface average 
-% results produced by the Berkeley Averaging method.  Temperatures are 
-% in Celsius and reported as anomalies relative to the Jan 1951-Dec 1980 
-% average.  Uncertainties represent the 95% confidence interval for 
+% This file contains a detailed summary of the land-surface average
+% results produced by the Berkeley Averaging method.  Temperatures are
+% in Celsius and reported as anomalies relative to the Jan 1951-Dec 1980
+% average.  Uncertainties represent the 95% confidence interval for
 % statistical and spatial undersampling effects.
-% 
-% The current dataset presented here is described as: 
-% 
+%
+% The current dataset presented here is described as:
+%
 %   Estimated Global Land-Surface TMIN based on the Complete Berkeley Dataset
-% 
-% 
+%
+%
 % This analysis was run on 31-Aug-2017 18:41:43
-% 
-% Results are based on 42357 time series 
+%
+% Results are based on 42357 time series
 %   with 15125752 data points
-% 
+%
 % Estimated Jan 1951-Dec 1980 absolute temperature (C): 2.91 +/- 0.08
-% 
+%
 % As Earth's land is not distributed symmetrically about the equator, there
-% exists a mean seasonality to the global land-average.  
-% 
+% exists a mean seasonality to the global land-average.
+%
 % Estimated Jan 1951-Dec 1980 monthly absolute temperature:
 %      Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct   Nov   Dec
 %     -2.82 -2.50 -0.61  2.37  5.40  7.56  8.49  8.11  6.36  3.60  0.64 -1.66
 % +/-  0.10  0.10  0.10  0.09  0.10  0.10  0.09  0.10  0.09  0.09  0.10  0.12
-% 
-% For each month, we report the estimated land-surface average for that 
-% month and its uncertainty.  We also report the corresponding values for 
-% year, five-year, ten-year, and twenty-year moving averages CENTERED about 
-% that month (rounding down if the center is in between months).  For example, 
-% the annual average from January to December 1950 is reported at June 1950. 
-% 
+%
+% For each month, we report the estimated land-surface average for that
+% month and its uncertainty.  We also report the corresponding values for
+% year, five-year, ten-year, and twenty-year moving averages CENTERED about
+% that month (rounding down if the center is in between months).  For example,
+% the annual average from January to December 1950 is reported at June 1950.
+%
 %                  Monthly          Annual          Five-year        Ten-year        Twenty-year
 % Year, Month,  Anomaly, Unc.,   Anomaly, Unc.,   Anomaly, Unc.,   Anomaly, Unc.,   Anomaly, Unc.
- 
+
   1850     1    -0.318  2.173    -0.780  1.506    -0.798  1.555    -0.821  1.622    -0.911  0.467
   1850     2     0.317  2.197    -0.731  1.481    -0.787  1.533    -0.831  1.669    -0.911  0.469
   1850     3    -1.202  2.276    -0.784  1.539    -0.774  1.527    -0.830  1.700    -0.905  0.469
