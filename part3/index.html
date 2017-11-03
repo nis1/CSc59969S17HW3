@@ -1,0 +1,86 @@
+
+<html>
+<meta charset="utf-8">
+<head>
+<title>Monthly Global Temperature</title>
+
+    <script src="./js/d3.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<script>
+var URL_temperatureData;
+var text;
+
+if (localStorage.getItem("Data") === null)
+{
+  URL_temperatureData = './static/tavg.json';
+  text = "(Average Temperature)";
+}
+else
+{
+   URL_temperatureData = localStorage.getItem("Data");
+   text = localStorage.getItem("Text");
+}
+
+function loadValues(val,text){
+  console.log(val);
+  console.log(text);
+  localStorage.setItem("Data", val);
+  localStorage.setItem("Text", text);
+  location.reload();
+}
+
+</script>
+
+  <div id="card" style="background:white">
+
+
+  <div class="dropdown" style="display: inline-block; "><span>Please select: <span>
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Temperature
+    <span class="caret" ></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="left: 95%; right: auto; text-align: center; transform: translate(-50%, 0);">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:loadValues('./static/tavg.json','(Average Temperature)')">Average Temperature</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:loadValues('./static/tmin.json','(Min. Temperature)')">Min. Temperature</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:loadValues('./static/tmax.json','(Max. Temperature)')">Max. Temperature</a></li>
+
+    </ul>
+  </div>
+
+<script>
+
+$(".dropdown-menu li a").click(function(){
+  $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+  $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+});
+
+</script>
+
+<style scoped>
+@import "./style.css"
+  </style>
+    <div class="graph-title">Monthly Global Land-Surface<div id="current"></div></div>
+
+
+
+
+
+    <div class="graph-subtitle">1753 - 2015</div>
+    <div class="details">Temperatures are in Celsius and reported as anomalies relative to the Jan 1951-Dec 1980 average.<br>Estimated Jan 1951-Dec 1980 absolute temperature &#8451: 8.66 +/- 0.07</div>
+    <div id="chart">
+          <script src="./js/script.js"></script>
+    </div>
+
+  </div>
+  <script>
+     document.getElementById("current").innerHTML = text;
+  </script>
+
+
+</body>
+
+</html>
